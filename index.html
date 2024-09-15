@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flems</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="/dist/flems.html"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script>
+      const flems = Flems(document.body, {
+        files: [
+            { name: ".html", content: "" },
+            { name: ".js", content: "" },
+            { name: ".css", content: "" },
+        ]
+      });
+    </script>
+  </body>
+</html>

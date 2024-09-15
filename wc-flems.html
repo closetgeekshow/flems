@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flems Web Component</title>
+</head>
+<body>
+
+<flems-editor></flems-editor>
+
+<script>
+    class FlemsEditor extends HTMLElement {
+        constructor() {
+            super();
+            this.attachShadow({ mode: 'open' });
+        }
+
+        connectedCallback() {
+            // Load the Flems script dynamically
+            const script = document.createElement('script');
+            script.src = 'https://flems.io/flems.html';
+            script.type = 'text/javascript';
+            script.charset = 'utf-8';
+            
+            script.onload = () => {
+                // Once the script is loaded, initialize Flems
+                this.initializeFlems();
+            };
+
+            document.head.appendChild(script);
+        }
+
+        initializeFlems() {
+            // Create a container for Flems in the shadow DOM
+            const container = document.createElement('div');
+            this.shadowRoot.appendChild(container);
+
+            // Initialize Flems with files and links
+            Flems(container, {
+                files: [{
+                    name: 'app.js',
+                    content: 'm.render(document.body, m("h1", "Hello world"))'
+                }],
+                links: [{
+                    name: 'mithril',
+                    type: 'script',
+                    url: 'https://unpkg.com/mithril'
+                }]
+            });
+        }
+    }
+
+    // Define the custom element
+    customElements.define('flems-editor', FlemsEditor);
+</script>
+
+</body>
+</html>

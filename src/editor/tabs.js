@@ -27,6 +27,7 @@ export default (model, actions) =>
         .bc('inherit')
       )
     ,
+    m('div.test','test'),
     m('.tabs'
       + b.display('flex')
         .overflowX('auto')
