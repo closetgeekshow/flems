@@ -40,5 +40,8 @@
     "source-map": "0.6.1",
     "tarts": "2.0.0",
     "wright": "^2.2.1"
+  },
+  "dependencies": {
+    "@esri/calcite-components": "^2.13.1"
   }
 }

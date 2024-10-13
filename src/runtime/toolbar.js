@@ -7,6 +7,12 @@ import closeIcon from '../icons/close.svg'
 import refreshIcon from '../icons/refresh.svg'
 import playIcon from '../icons/play.svg'
 import pauseIcon from '../icons/pause.svg'
+import { defineCustomElements } from "@esri/calcite-components/dist/loader";
+// CDN hosted assets
+defineCustomElements(window, {
+  resourcesUrl: "https://cdn.jsdelivr.net/npm/@esri/calcite-components/dist/calcite/assets",
+});
+
 
 export default (model, actions) =>
   m('.toolbar'
