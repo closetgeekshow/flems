@@ -14,3 +14,4 @@ tasks:
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
+    - FallenMax.mithril-emmet
